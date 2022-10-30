@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<h1>Page du module</h1>
+
+		<div class="container">
+      {% for module in module %}
+        <div class="card">
+          {#}<i class="fa-solid fa-list-check"></i>#}
+          <h5 class="card-title">h5 {#{{ structure.city }}#}</h5>
+          <h6 class="card-title">h6 {#{{ structure.address }} {{ structure.zipcode }}#}</h6>
+          <div class="form">
+            {% if module.planning == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Gérer planning équipe</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Gérer planning équipe</label>
+              </div>
+            {% endif %}
+            {% if module.registration == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Service d'inscription sur internet</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Service d'inscription sur internet</label>
+              </div>
+            {% endif %}
+            {% if module.negotiation == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Négociation prix fournisseur</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Négociation prix fournisseur</label>
+              </div>
+            {% endif %}
+            {% if module.sale == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Service d'inscription sur internet</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Service d'inscription sur internet</label>
+              </div>
+            {% endif %}
+            {% if module.advertising == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Vendre des boissons</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Vendre des boissons</label>
+              </div>
+            {% endif %}
+            {% if module.mailing == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Promotion de la salle</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">Promotion de la salle</label>
+              </div>
+            {% endif %}
+            {% if module.training == true %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">faire son mailing</label>
+              </div>
+            {% else %}
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                <label class="form-check-label" for="flexSwitchCheckDisabled">faire son mailing</label>
+              </div>
+            {% endif %}
+          </div>
+          <div class="pra">
+            <a href="#" class="button">Modifier</a>
+            <a href="#" class="button">Suprimer</a>
+          </div>
+        </div>
+      {% endfor %}
+		</div>
+
+
+{% endblock %}

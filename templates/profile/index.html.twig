@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}compte de franchisé
+{% endblock %}
+{% block body %}
+	<h1>bienvenue sur votre compte de franchisé</h1>
+
+	<h2></h2>
+
+	<div class="container">
+		<div class="card">
+			<h5 class="card-title">Votre adresse mail 1:
+			</h5>
+			<a href="#">Voir la/les structure(s)</a>
+		</div>
+	</div>
+
+
+
+
+	{#<div class="container">
+		{% for franchise in franchises %}
+			<div class="card">
+				{% if franchise.name %}
+					<h5 class="card-title">{{ franchise.name }}</h5>
+				{% endif %}
+				<a href="{{ path('app_admin_list_structure', {'id': franchise.id}) }}">Voir la/les structure(s)</a>
+				<div class="pra">
+					<a href="{{ path('app_admin_edit_franchise', {'id': franchise.id}) }}" id="btn" class="button">Modifier</a>
+					<a href="{{ path('app_admin_delete_franchise', {'id': franchise.id}) }}" id="btn" class="button">Suprimer</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>#}
+
+{% endblock %}

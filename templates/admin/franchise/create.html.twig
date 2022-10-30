@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>Créer ou modifier une franchise</h1>
+    <section class="container">
+        {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <div class="input-group mt-2">
+            <input id="btn" class="btn btn-primary mt-2" type="submit" value="Valider">
+        </div>
+    </section>
+{% endblock %}

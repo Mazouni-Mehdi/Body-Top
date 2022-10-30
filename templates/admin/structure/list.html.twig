@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de la/des structure(s) de la franchise de {#{{ franchise.name }}#}{% endblock %}
+{% block body %}
+	<h1>Liste de la/des structure(s) de la franchise de {{ franchise.name }}</h1>
+
+	<div class="container">
+		{% for structure in structure %}
+			<div class="card">
+				<h5>{{ franchise.name }}</h5>
+				<div class="form-label">Adresse:  
+					<span class="form-label">{{ structure.address }}</span>
+				</div>
+				<div class="form-label">Code postal:  
+					<span class="form-label">{{ structure.zipcode }}</span>
+				</div>
+				<div class="form-label">Ville:  
+					<span class="form-label">{{ structure.city }}</span>
+				</div>
+				<a href="{{ path('app_admin_list_module', {'id': structure.id}) }}">Voir les modules</a>
+				<div class="pra">
+					<a href="{{ path('app_admin_edit_structure', {'id': structure.id}) }}" id="btn" class="button">Modifier</a>
+					<a href="{{ path('app_admin_delete_structure', {'id': structure.id}) }}" id="btn" class="button">Suprimer</a>
+				</div>
+			</div>	
+		{% endfor %}
+	</div>
+
+{% endblock %}

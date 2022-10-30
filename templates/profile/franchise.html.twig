@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}compte de franchisé
+{% endblock %}
+{% block body %}
+	<h1>bienvenue sur votre compte de franchisé index</h1>
+
+	<div class="container">
+		<div class="card">
+			<h5 class="card-title">Votre adresse mail 1:
+			</h5>
+			<a href="#">Voir la/les structure(s)</a>
+		</div>
+	</div>
+
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">Votre adresse mail 2: {{ user.email }}</h5>
+      <a href="{{ path('app_profile_list_structure', {'id': franchise.id}) }}">Voir la/les structure(s)</a>
+    </div>
+  </div>
+
+
+{% endblock %}

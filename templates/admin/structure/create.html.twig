@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<h1>Créer ou modifier une structure</h1>
+	<section class="container">
+		{{ form_start(form1) }}
+		{{ form_rest(form1) }}
+		<div class="input-group mt-2">
+			<input id="btn" class="btn btn-primary mt-2" class="form-control" type="submit" value="Valider">
+		</div>
+	</section>
+
+{% endblock %}

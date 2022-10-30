@@ -1,0 +1,33 @@
+<nav>
+	<a href="/" class="nav-icon" aria-label="visit homepage" aria-current="page">
+		<img src="../assets/image/icon-body-top.jpg" alt="logo">
+		<span>Body Top</span>
+	</a>
+	<div class="main-navlinks">
+		<button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<div class="navlinks-container">
+			{% if is_granted('ROLE_ADMIN') %}
+				<a href="/admin/franchise/new">Créer franchise</a>
+				<a href="/admin/structure/new">Créer Structure</a>
+				<a href="/admin">Voir franchise</a>
+				<a href="/admin/structure">Voir Structure</a>
+			{% endif %}
+		</div>
+	</div>
+	<div class="nav-authentication">
+		<a href="{% if app.user %}/logout{% else %}/login{% endif %}" class="sign-user" aria-label="Sign in page">
+			<i class="fa-solid fa-user"></i>
+		</a>
+		<div class="sign-btns">
+			{% if app.user %}
+				<a href="/logout" class="btn">Se déconnecter</a>
+				{% else %}	
+				<a href="/login" class="btn">Se connecter</a>
+			{% endif %}
+		</div>
+	</div>
+</nav>

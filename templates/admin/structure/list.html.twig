@@ -3,6 +3,13 @@
 {% block title %}Liste de la/des structure(s) de la franchise de {#{{ franchise.name }}#}{% endblock %}
 {% block body %}
 	<h1>Liste de la/des structure(s) de la franchise de {{ franchise.name }}</h1>
+	
+	<div class="input-control-search d-flex justify-content-center">
+    <input type="text" id="searchbar" class="form-control" placeholder="Rechercher" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
 
 	<div class="container">
 		{% for structure in structure %}

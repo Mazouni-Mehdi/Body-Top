@@ -6,9 +6,10 @@ use App\Repository\FranchiseRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: FranchiseRepository::class)]
-/*#[UniqueEntity("name", message: "ce nom de franchise est déjà pris...")]*/
+#[UniqueEntity("name", message: "ce nom de franchise est déjà pris...")]
 class Franchise
 {
     #[ORM\Id]

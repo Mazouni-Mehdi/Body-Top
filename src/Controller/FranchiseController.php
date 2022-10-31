@@ -3,14 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Franchise;
-use App\Entity\Module;
 use App\Entity\User;
-use App\Entity\Structure;
 use App\Form\UserType;
-use App\Form\UserStructureType;
 use App\Form\FranchiseType;
-use App\Form\ModuleType;
-use App\Form\StructureType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +29,6 @@ class FranchiseController extends AbstractController
       $em->persist($user->getFranchise());
       $em->persist($user);
       $em->flush();
-      $this->addFlash('success', 'La franchise a été créé avec succès');
       return $this->redirectToRoute('app_admin_');
     }
     return $this->render('admin/franchise/create.html.twig', [

@@ -38,8 +38,6 @@ class ProfileController extends AbstractController
     }
 
 
-
-
     #[Route('/structure/{id<\d+>}', name: 'list_structure')]
     public function structure(Franchise $franchise): Response
     {

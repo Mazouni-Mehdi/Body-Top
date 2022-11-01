@@ -6,10 +6,22 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'montserrat', monospace, sans-serif;
   background: white;
+  /*display: flex;
+  flex-direction: column;*/
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
+
+/*.content {
+  flex-grow: 1;
+}*/
 
 nav {
   position: relative;
@@ -225,7 +237,7 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /*-webkit-text-fill-color: transparent;*/
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin: 50px 0px 20px;
   font-size: 25px;
@@ -285,8 +297,6 @@ h5 {
 }
 
 .card .button {
-  /*display: flex;
-  justify-content: center;*/
   background-color: #FF715B;
   color: white;
   text-decoration: none;
@@ -308,7 +318,6 @@ h5 {
   align-items: center;
   justify-content: center;
   font-family: 'montserrat', monospace, sans-serif;
-  /*padding-top: 40px;*/
   color: #333;
 }
 
@@ -349,11 +358,6 @@ h5 {
 }
 
 form {
-  /*padding: 50px;
-  margin: 20px;
-  border: 1px solid #4C5B5C;
-  border-radius: 10px;
-  background: #FF715B;*/
   border: 2px solid #4C5B5C;
   float: center;
   width: 500px;
@@ -426,42 +430,3 @@ select {
   justify-content: center;
   flex-wrap: wrap;
 }
-
-/*.form-switch .form-check-input {
-  height: 24px;
-  width: 48px;
-}
-.form-switch .form-check-input:focus {
-  border-color: rgba(0, 0, 0, 0.25);
-  outline: 0;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
-}
-.form-switch .form-check-input:checked {
-  background-color: #FF715B;
-  border-color: #FF715B;
-  border: none;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
-}*/
-
-
-/*button .btn {
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #3a2977;
-  display: inline-block;
-  position: relative;
-}*/
-
-/*div.form {
-  display: flex;
-  margin-top: 15px;
-
-}
-
-div.form-label {
-  text-align: start;
-  justify-content: start;
-  align-items: flex-start;
-}*/

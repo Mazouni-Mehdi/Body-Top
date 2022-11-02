@@ -1,5 +1,13 @@
 Projet salle de sport Body Top
+Description
+Dépôt du projet Body Top.
 
+Les documents annexes sont disponibles dans le dossier ANNEXES :
+
+Manuel d'utilisation
+Voici l'adresse de mon site déployer: https://php-body-top.herokuapp.com/
+
+j'ai déposé le mauvais PDF dans mon évaluation je vous ai joint le bon 
 
 git clone https://github.com/Mazouni-Mehdi/Body-Top.git
 Installation

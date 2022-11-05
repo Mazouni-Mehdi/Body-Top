@@ -34,6 +34,9 @@ class Module
     #[ORM\Column]
     private ?bool $training = null;
 
+    #[ORM\OneToOne(inversedBy: 'module', cascade: ['persist', 'remove'])]
+    private ?Structure $structure = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -122,4 +125,17 @@ class Module
 
         return $this;
     }
+
+    public function getStructure(): ?Structure
+    {
+        return $this->structure;
+    }
+
+    public function setStructure(?Structure $structure): self
+    {
+        $this->structure = $structure;
+
+        return $this;
+    }
+
 }

@@ -27,6 +27,7 @@ class Franchise
     private ?User $user = null;
 
     #[ORM\OneToMany(mappedBy: 'franchise', targetEntity: structure::class, orphanRemoval: true)]
+    #[ORM\JoinColumn(onDelete: 'CASCADE')]
     private Collection $structure;
 
     public function __construct()

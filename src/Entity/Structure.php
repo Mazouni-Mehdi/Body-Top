@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\StructureRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: StructureRepository::class)]
@@ -29,11 +30,10 @@ class Structure
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'structure')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(onDelete: 'CASCADE')]
     private ?Franchise $franchise = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\OneToOne(mappedBy: 'structure', cascade: ['persist', 'remove'])]
     private ?Module $module = null;
 
     public function getId(): ?int
@@ -101,18 +101,6 @@ class Structure
         return $this;
     }
 
-    /*public function getIs_active()
-    {
-        return $this->is_active;
-    }
-
-    public function setIs_active($is_active)
-    {
-        $this->is_active = $is_active;
-
-        return $this;
-    }*/
-
     public function getUser(): ?User
     {
         return $this->user;
@@ -152,11 +140,20 @@ class Structure
         return $this->module;
     }
 
-    public function setModule(Module $module): self
+    public function setModule(?Module $module): self
     {
+        // unset the owning side of the relation if necessary
+        if ($module === null && $this->module !== null) {
+            $this->module->setStructure(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($module !== null && $module->getStructure() !== $this) {
+            $module->setStructure($this);
+        }
+
         $this->module = $module;
 
         return $this;
-    }
-    
+    } 
 }
